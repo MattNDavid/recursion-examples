@@ -1,11 +1,11 @@
 public class Max {
     // helper function
     // find the max from data[k]...data[data.length-1]
-    public static int findMaxRecursive(int[] data, int k) {
-        if (k==(data.length-1)) {
-            return data[data.length-1];
+    private static int findMaxRecursive(int[] data, int k) {
+        if (k == (data.length - 1)) {
+            return data[data.length - 1];
         }
-        int maxInKToN = findMaxRecursive(data, k+1);
+        int maxInKToN = findMaxRecursive(data, k + 1);
         System.out.printf("findMaxRecursive: comparing %d with %d\n", data[k], maxInKToN);
         return Math.max(data[k], maxInKToN);
     }
