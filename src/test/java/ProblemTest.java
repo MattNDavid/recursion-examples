@@ -8,8 +8,8 @@ public class ProblemTest {
 
         int testSize = 100;
         int data[] = new int[testSize];
-        for (int i=0; i<testSize; i++) {
-            data[i] = i*10;
+        for (int i = 0; i < testSize; i++) {
+            data[i] = i * 10;
         }
 
         int iterativeSum = Sum.iterativeSum(data);
@@ -28,15 +28,15 @@ public class ProblemTest {
     @Test
     public void uniquePaths() {
         int inputs[][] = {
-                {0,0},
-                {0,1},
-                {1,0},
-                {1,1},
-                {1,2},
-                {2,1},
-                {2,2},
-                {2,4},
-                {3,5},
+                {0, 0},
+                {0, 1},
+                {1, 0},
+                {1, 1},
+                {1, 2},
+                {2, 1},
+                {2, 2},
+                {2, 4},
+                {3, 5},
                 //{10,20},
         };
         int expected[] = {0, 0, 0, 1, 1, 1, 2, 4, 15};
@@ -44,7 +44,7 @@ public class ProblemTest {
         assertEquals(inputs.length, expected.length);
 
         boolean failed = false;
-        for (int i=0; i<inputs.length; i++) {
+        for (int i = 0; i < inputs.length; i++) {
             int actual = UniquePath.uniquePaths(inputs[i][0], inputs[i][1]);
             assertEquals(expected[i], actual);
         }
@@ -67,6 +67,15 @@ public class ProblemTest {
             assertEquals(actualIter, expect[i]);
             assertEquals(actualRecr, expect[i]);
             assertEquals(actualStack, expect[i]);
+        }
+    }
+
+    @Test
+    public void uniqueStep() {
+        int[] expect = {0, 0, 0, 1, 1, 2, 3, 5, 8, 13, 21};
+        for (int i = 0; i < expect.length; i++) {
+            int actual = UniqueStep.uniqueSteps(i - 2);
+            assertEquals(expect[i], actual);
         }
     }
 }
