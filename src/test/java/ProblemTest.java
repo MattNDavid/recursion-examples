@@ -1,8 +1,33 @@
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import java.util.List;
+
+import static org.junit.Assert.*;
 
 public class ProblemTest {
+    @Test
+    public void printWithoutLoop() {
+        // PrintWithoutLoop.printWithLoop();
+        int[] inputs = {-1, 0, 1, 2, 3, 100, 500};
+
+        for (int i = 0; i < inputs.length; i++) {
+            int upTo = inputs[i];
+            List<Integer> result = PrintWithoutLoop.printWithoutLoop(upTo);
+
+            if (upTo <= 0) {
+                assertNull(result);
+                continue;
+            } else {
+                assertNotNull(result);
+            }
+            assertEquals(upTo, result.size());
+
+            for (int j = 0; j < upTo; j++) {
+                assertEquals(j, result.get(j).intValue());
+            }
+        }
+    }
+
     @Test
     public void Sum() {
 
